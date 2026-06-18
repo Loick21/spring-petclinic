@@ -1,0 +1,22 @@
+name: "Greeting Workflow"
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  greet-user:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Say Hello
+      id: greet-user
+      uses: ./github/actions/grettings # Utilise l'action locale
+      with:
+        username: "Lo"
+        greeting: "Hello"
+
+    - name: Display message
+      run: echo "Greeting response ${{steps.greet-user.outputs.message}}"    

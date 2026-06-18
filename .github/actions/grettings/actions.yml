@@ -1,0 +1,18 @@
+name: "Gretting action"
+description: "Une action simple"
+inputs:
+    username:
+        description: "Username"
+        default: "World"
+        required: true
+    gretting:
+        description: "gretting message to display"
+        default: "World"  
+        required: true
+outputs:
+    message:
+        description: 'Le tag généré pour l’image Docker'
+        #value: ${{ steps.generation.outputs.tag }}          
+runs:
+    using: "node20"
+    main: "index.js"
