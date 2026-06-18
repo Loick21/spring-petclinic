@@ -13,7 +13,7 @@ jobs:
 
     - name: Say Hello
       id: greet-user
-      uses: ./github/actions/grettings # Utilise l'action locale
+      uses: ./.github/actions/grettings # Utilise l'action locale
       with:
         username: "Lo"
         greeting: "Hello"
